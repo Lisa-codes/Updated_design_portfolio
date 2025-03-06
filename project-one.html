@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Padel Tennis Mobile App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Background with Waves */
+.research-section {
+    position: relative;
+    background: linear-gradient(135deg, #f7f7f7, #eaeaea); /* Neutral yet stylish */
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* Wave Design */
+.wave-top,
+.wave-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-size: cover;
+}
+
+.wave-top {
+    top: 0;
+    background: url('https://www.svgrepo.com/show/355634/wave-top.svg') no-repeat center top;
+}
+
+.wave-bottom {
+    bottom: 0;
+    background: url('https://www.svgrepo.com/show/355635/wave-bottom.svg') no-repeat center bottom;
+}
+
+/* Research Cards */
+.research-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 90%; /* Ensures the card spans almost the full width */
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+/* Card Headings */
+.research-card h4 {
+    color: #37474f; /* Dark gray for contrast */
+    font-weight: bold;
+}
+
+/* Card Text */
+.research-card p {
+    color: #555;
+}
+
+/* Slide-in Animation */
+.slide-left {
+    animation: slideIn 0.8s forwards;
+}
+
+/* Slide Animation Effect */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Delayed Animation for Staggered Effect */
+.research-card:nth-child(1) { animation-delay: 0.2s; }
+.research-card:nth-child(2) { animation-delay: 0.4s; }
+.research-card:nth-child(3) { animation-delay: 0.6s; }
+.research-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .research-card {
+        transform: translateX(0);
+        opacity: 1;
+        animation: none;
+        max-width: 95%;
+    }
+}
+/* Challenges Section */
+.challenges-section {
+    position: relative;
+    background: linear-gradient(135deg, #eaeaea, #dcdcdc); /* Subtle neutral tone */
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* Challenge Cards */
+.challenge-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 90%; /* Makes cards span full width */
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+/* Card Headings */
+.challenge-card h4 {
+    color: #37474f;
+    font-weight: bold;
+}
+
+/* Card Text */
+.challenge-card p {
+    color: #555;
+}
+
+/* Slide-in Animation */
+.slide-left {
+    animation: slideIn 0.8s forwards;
+}
+
+/* Staggered Animation Delay */
+.challenge-card:nth-child(1) { animation-delay: 0.2s; }
+.challenge-card:nth-child(2) { animation-delay: 0.4s; }
+.challenge-card:nth-child(3) { animation-delay: 0.6s; }
+.challenge-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .challenge-card {
+        transform: translateX(0);
+        opacity: 1;
+        animation: none;
+        max-width: 95%;
+    }
+}
+/* Style Guide Section */
+.style-guide-section {
+    position: relative;
+    background: linear-gradient(135deg, #f7f7f7, #eaeaea); /* Neutral but refined */
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* Style Guide Image */
+.style-guide-image {
+    margin-top: 30px;
+}
+
+.style-guide-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .style-guide-image img {
+        max-width: 95%;
+    }
+}
+
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        footer a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Lisa Njeri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Overview Section -->
+    <section class="py-5">
+        <div class="container fade-in">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="images\iPhone 14 Pro Mockup.png" alt="Padel Tennis Mobile App" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h2>Padel Tennis Mobile App</h2>
+                    <p>
+                        The Padel Tennis mobile app was designed to enhance the experience of playing padel tennis at the
+                        Village Market.
+                        This app allows users to effortlessly book their sessions and make payments, integrating a seamless
+                        user interface
+                        with a QR code system to easily add friends and enjoy games together. The app also simplifies the
+                        booking process,
+                        making it easier for users to explore match types and tournaments, while tracking their scores for
+                        each game played.
+                    </p>
+                    <p><strong>Client:</strong> Village Market </p>
+                    <p><strong>Sector:</strong> Recreation & Sports </p>
+                    <p><strong>Project Duration:</strong> May 2024 - June 2024 (1 month ) </p>
+                    <p><strong>Role:</strong> UI/UX Designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foundational User Research & Competitive Analysis -->
+<section class="py-5 research-section">
+    <div class="wave-top"></div> <!-- Top Wave -->
+    <div class="container fade-in">
+        <h2 class="text-center mb-4">Foundational User Research & Competitive Analysis</h2>
+        <p class="text-center ">
+            To craft a seamless padel experience tailored for Village Market, we analyzed existing solutions and identified key opportunities for refinement. 
+            Our research uncovered usability gaps in leading competitors, guiding our design decisions to create a more intuitive and personalized experience.
+        </p>
+
+        <!-- Challenges Faced -->
+<section class="py-5 challenges-section">
+    <div class="wave-top"></div> <!-- Top Wave -->
+    <div class="container fade-in">
+        <h2 class="text-center mb-4">Challenges</h2>
+
+        <!-- Challenges Cards -->
+        <div class="challenge-card slide-left">
+            <h4>Lack of Dedicated Court Booking</h4>
+            <p>
+                Users struggled to **find Village Market courts** on PlayAtomic due to its generalized approach. 
+                Without a **dedicated space**, they had to sift through multiple listings, leading to confusion and frustration.
+            </p>
+        </div>
+
+        <div class="challenge-card slide-left" style="animation-delay: 0.2s;">
+            <h4>Unreliable Availability Updates</h4>
+            <p>
+                Many players reported **misleading court availability**, only to realize upon checkout that their slot was taken. 
+                The lack of **real-time updates** resulted in a broken booking experience.
+            </p>
+        </div>
+
+        <div class="challenge-card slide-left" style="animation-delay: 0.4s;">
+            <h4>Limited Game Progress Tracking</h4>
+            <p>
+                Players wanted a way to **track past matches, scores, and progress**, but existing platforms lacked 
+                a personalized history. This **gap in performance tracking** reduced engagement and motivation.
+            </p>
+        </div>
+
+        <div class="challenge-card slide-left" style="animation-delay: 0.6s;">
+            <h4>Inefficient Time Selection</h4>
+            <p>
+                Users found it **cumbersome to select available time slots**, often having to go back and forth between screens.  
+                The lack of a **clear scheduling system** made the process tedious and prone to errors.
+            </p>
+        </div>
+    </div>
+    <div class="wave-bottom"></div> <!-- Bottom Wave -->
+</section>
+
+
+        <!-- Research Cards -->
+        <h2 class="text-center mb-4">Opportunities</h2>
+        <div class="research-card slide-left">
+            <h4>Reducing Booking Confusion</h4>
+            <p>
+                While PlayAtomic excels in navigation and match discovery, its open-platform approach led to confusion when locating specific courts like 
+                Village Market. Our solution streamlines this by offering a **dedicated booking space**, minimizing uncertainty.
+            </p>
+        </div>
+
+        <div class="research-card slide-left" style="animation-delay: 0.2s;">
+            <h4>Personalized Booking Alerts</h4>
+            <p>
+                Users reported frustration when a previously viewed court became fully booked. To **mitigate misleading availability**, we introduced 
+                **smart notifications**, alerting players when slots fill up, ensuring they always have up-to-date information.
+            </p>
+        </div>
+
+        <div class="research-card slide-left" style="animation-delay: 0.4s;">
+            <h4>Autonomous Score Tracking</h4>
+            <p>
+                Unlike PlayAtomic, which lacks built-in tracking, our app empowers users with a **personalized game history**. Players can **log scores, 
+                track progress, and monitor rankings**, creating a more engaging and competitive environment.
+            </p>
+        </div>
+
+        <div class="research-card slide-left" style="animation-delay: 0.6s;">
+            <h4>Seamless Time Selection</h4>
+            <p>
+                Users needed a more intuitive way to book matches. We introduced a **time slot filter and a sliding calendar**, allowing players to 
+                **effortlessly select day, time, and month**, enhancing the booking flow based on real user behaviors.
+            </p>
+        </div>
+    </div>
+    <div class="wave-bottom"></div> <!-- Bottom Wave -->
+</section>
+
+
+    <!-- Design Process -->
+    <section class="py-5 bg-light">
+        <div class="container fade-in">
+            <h3 class="text-center">Design Process</h3>
+           <p class="text-center">
+                    In order to empathize with the user during the design process,
+                    I crafted personas based on real life users who play the game to better
+                    craft the user experience while highlighting key user motivations
+                    and goals.
+                </p>
+            
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <img src="images\padel persona 1.png" class="img-fluid rounded shadow" alt="Persona 1">
+                </div>
+                <div class="col-md-6">
+                    <img src="images\padel persona 2.png" class="img-fluid rounded shadow" alt="Persona 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Flow -->
+    <section class="py-5">
+        <div class="container fade-in">
+            <h3 class="text-center">User Flow</h3>
+            <p class="text-center">From sign-up to booking and payments, ensuring a seamless experience, the user flows
+                help define the problem by crafting user journey's of how the end-user would approach the application
+            </p>
+            <p class="text-center">
+                In the Padel Tennis mobile app, the user flow begins with the Sign-Up process, where users are
+                prompted to create an
+                account by entering their basic information, such as name, email, and password, or by signing in
+                using third-party
+                authentication options like Google or Email. Once signed up, users proceed to the Home Screen,
+                which presents
+                available tennis courts, match schedules, and upcoming tournaments. From here, they can navigate to
+                the Booking Section,
+                where they select a court, choose a date and time, and confirm their booking.
+            </p>
+            <p class="text-center">
+                Next, users are directed to the Payment Screen, where they can view the booking summary and make
+                payments through
+                integrated payment methods such as credit/debit cards, mobile wallets, or other available options.
+                Upon successful
+                payment, the user receives an Instant Notification confirming their booking details, which includes
+                the court number,
+                time slot, and any other relevant instructions. The app also allows users to receive notifications
+                for upcoming matches
+                or changes to their booking. This seamless flow ensures a user-friendly experience, from account
+                creation to court
+                booking and payment completion, with real-time notifications keeping the user informed throughout.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <img src="images\ux process flow padel (1).jpg" class="img-fluid rounded shadow" alt="User Flow 1" loading="lazy">
+                </div>
+                <div class="col-md-6">
+                    <img src="images\Padel app user flow (1).jpg" class="img-fluid rounded shadow" alt="User Flow 2" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="py-5 bg-light">
+        <div class="container fade-in">
+            <h3 class="text-center">Gathering Insights</h3>
+            <p class="text-center"> The first usability was carried out for the low-fidelity wireframes
+                by conducting interviews with users to determine user pain points which are highlighted as shown below.
+            </p>
+            <div class="row align-items-center" style="justify-content: center;">
+                <div class="text-center" style="max-width: 60%; height: auto; justify-content: center;">
+                    <img src="images\Padel Tennis Affinity Map (1).jpg" class="img-fluid rounded shadow" alt="User Flow 1" loading="lazy">
+                </div>
+                </div> <br> <br>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">25% of users found the booking process confusing.</li>
+                <li class="list-group-item">50% suggested uniform CTA buttons.</li>
+                <li class="list-group-item">25% requested more sign-up options.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Style Guide Section -->
+<section class="py-5 style-guide-section">
+    <div class="wave-top"></div> <!-- Top Wave -->
+    <div class="container text-center fade-in">
+        <h2>Style Guide</h2>
+        <p >
+            A **consistent and cohesive design system** was essential in creating a seamless user experience.  
+            This style guide served as the foundation, ensuring **visual harmony, accessibility, and intuitive interactions**  
+            across the entire application.
+        </p>
+
+        <!-- Style Guide Image -->
+        <div class="style-guide-image">
+            <img src="images\style guide.png" alt="Padel Tennis App Style Guide" class="img-fluid rounded shadow">
+        </div>
+    </div>
+    <div class="wave-bottom"></div> <!-- Bottom Wave -->
+</section>
+
+
+    <!-- Prototype Section -->
+<section class="design-process py-5 bg-light">
+    <div class="container">
+        <h3 class="text-center pb-4">High-Fidelity Mockups</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    The design process involved initial wireframing to map out the user journey, followed by
+                    Continuous feedback and utilization of
+                    the internal design system I built was integrated throughout the
+                    process to refine the
+                    design and enhance the overall user experience. Based on the insights gathered,
+                    designs were iterated addressing the pain points with the following solutions.
+                </p>
+                <!-- Bulleted points -->
+                <ul class="text-left" style="list-style-type: disc; margin-left: 20px;">
+                    <li>Using an internal design system to address uniformity of components.</li>
+                    <li>Streamlining the booking process using time slot filters to show the particular courts
+                        available during particular times.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Placeholder for Wireframes & Prototypes -->
+            <div class="col-md-6">
+                <img src="images\profile padel.png" alt="Prototype" class="img-fluid mb-4" style="max-width: 40%; height: auto;" loading="lazy">
+            </div>
+            <div class="col-md-6">
+                <img src="images\padel sign up page.png" alt="Prototype" class="img-fluid mb-4" style="max-width: 40%; height: auto;">
+            </div>
+            <div class="col-md-6">
+                <img src="images\booking padel.png" alt="Prototype" class="img-fluid mb-4" style="max-width: 40%; height: auto;">
+            </div>
+            <div class="col-md-6">
+                <img src="images\padel sign in page.png" alt="Prototype" class="img-fluid mb-4" style="max-width: 40%; height: auto;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Challenges & Solutions Section -->
+<section class="challenges-solutions py-5">
+    <div class="container">
+        <h3 class="text-center pb-4">Challenges & Solutions</h3>
+        <p>
+            One of the primary challenges of this project was the need to deliver a fully functional app within a tight
+            timeline.
+            To address this, we prioritized the development of core features such as the booking system, QR code
+            integration, and
+            score tracking. Rapid prototyping allowed for quick iterations, ensuring that each design element was
+            validated before
+            moving on to the next stage.
+        </p>
+        <p>
+            The final product successfully streamlined the booking process, enhanced user interaction with QR code
+            functionalities,
+            and provided an intuitive interface for tracking game scores.
+        </p>
+    </div>
+</section>
+  
+ <!-- Challenges & Solutions Section -->
+<section class="challenges-solutions py-5">
+    <div class="container">
+        <h3 class="text-center pb-4">Conclusion: Elevating The Padel Tennis Experience</h3>
+        <p>
+            The Padel Tennis Mobile App was designed with a user-first approach, ensuring that every interaction was seamless, intuitive, and tailored to the needs of Village Market players. Through a combination of foundational research, competitive analysis, 
+            and user feedback, we successfully bridged the gaps left by existing solutions, providing a dedicated,
+             hassle-free booking and tracking system. <br>
+            Key Takeaways:
+            <ul class="text-left" style="list-style-type: disc; margin-left: 20px;">
+                <li>✅ User-Centered Innovation: Addressing pain points such as court availability confusion, personalized reminders, and time-slot selection improved usability and engagement.</li>
+                <li>✅ Consistency in Design: A well-defined design system ensured uniformity, accessibility, and a visually appealing interface.</li>
+           <li>  ✅ Scalability & Future Growth: While the app is tailored for Village Market, its framework allows for future expansion, additional feature integrations, and enhanced user experiences.</li>
+            </ul>
+            
+            By combining intuitive UX, strategic problem-solving, and a refined design system, this project exemplifies how thoughtful digital experiences can enhance real-world activities—making booking, playing, and tracking Padel Tennis matches more effortless than ever. 
+        </p>
+    </div>
+</section>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let fadeIns = document.querySelectorAll(".fade-in");
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            fadeIns.forEach(el => observer.observe(el));
+        });
+    </script>
+    <footer>
+        <p>Connect with me</p>
+        <a href="mailto:lisakinuthia9@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/ms-lisa-692aa81b2/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Lisa-codes" target="_blank"><i class="fab fa-github"></i></a>
+        <p> &copy; 2025 Lisa Njeri. All rights reserved. </p>
+    </footer>
+</body>
+</html>

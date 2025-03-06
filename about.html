@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container-one {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            text-align: left;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        h1, h2 {
+            color: #222;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            margin-top: 20px;
+        }
+        .skill {
+            margin: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .skill:hover {
+            transform: scale(1.05);
+            background: #f0f0f0;
+        }
+        .skill i {
+            margin-right: 8px;
+            font-size: 24px;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        footer a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Lisa Njeri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-one">
+        <img src="images\Headshot.jpg" alt="Lisa Njeri" class="profile-img">
+        <h3>Hello! I’m Lisa Njeri. A freelance UI/UX designer with 2 years of experience, based in Nairobi. </h3>
+        <p>My work includes crafting intuitive and user-focused digital experiences. My journey began in 2022, and since then, I’ve worked with brands like Synchronicity Africa, 
+            Born to Lead Mountain Adventure, and Village Market. I specialize in research-driven design, wireframing, prototyping, and high-fidelity UI, ensuring that every project aligns business goals with user needs.</p>
+        <p>I believe great design thrives on collaboration, and I work closely with developers to bridge the gap between vision and functionality.
+             Always eager to learn, I stay updated with industry trends and refine my craft constantly.
+              When I’m not designing, I’m out hiking, baking, reading, writing articles or seeking new creative challenges.</p>
+        
+        
+        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill"><i class="fas fa-paint-brush"></i> UI & UX Design</div>
+            <div class="skill"><i class="fas fa-code"></i> Frontend Collaboration</div>
+            <div class="skill"><i class="fas fa-chart-line"></i> UX Research</div>
+            <div class="skill"><i class="fas fa-pencil-ruler"></i> Wireframing & Prototyping</div>
+            <div class="skill"><i class="fas fa-bullhorn"></i> Branding & Identity</div>
+            <div class="skill"><i class="fas fa-object-ungroup"></i> Graphic Design (Posters & Business Cards)</div>
+        </div>
+    </div>
+
+    
+    <div class="container mt-5" id="contact">
+        <h2 class="text-center">Get in Touch</h2>
+        <p class="text-center">Feel free to reach out for collaborations or just a chat.</p>
+        <div class="text-center">
+            <a href="mailto:lisakinuthia9@gmail.com" class="btn btn-dark mb-4">Email Me</a>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>Connect with me</p>
+        <a href="mailto:lisakinuthia9@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/ms-lisa-692aa81b2/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Lisa-codes" target="_blank"><i class="fab fa-github"></i></a> <br>
+      <p> &copy; 2025 Lisa Njeri. All rights reserved. </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
